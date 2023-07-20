@@ -1,13 +1,11 @@
-import './App.css'
+import "./App.css";
 
 function App() {
-
-
   return (
-    <>
-      <p>This is a Vite + React App </p>
-    </>
-  )
+    <div>
+        <p>This is a react + vite project.</p>
+    </div>
+  );
 }
 
-export default App
+export default App;
