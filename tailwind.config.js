@@ -8,6 +8,11 @@ export default {
     extend: {
       fontFamily: ['Syne', 'sans-serif']
     },
+    colors: {
+      'black': '#1A1A1A',
+      'white': "#ffffff",
+      'red': '#CD3C3D'
+    }
   },
   plugins: [],
 }

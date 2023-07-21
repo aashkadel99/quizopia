@@ -1,6 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Syne", sans-serif;
+}
+
+.form-shadow{
+  box-shadow: -17px 17px 0px 0px #1A1A1A;
+}
+
+/* .illustrations{
+  outline: 2px solid red;
+} */
+
+@keyframes animateUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.animate-one{
+  animation: animateUpDown 2s ease-in-out infinite;
+}
+
+.animate-two{
+  animation: animateUpDown 1.5s ease-in-out infinite;
+}
+
+.animate-three{
+  animation: animateUpDown 1.3s ease-in-out infinite;
+}
+
+.animate-four{
+  animation: animateUpDown 2s ease-in-out infinite;
+}
+
+.animate-five{
+  animation: animateUpDown 2s ease-in-out infinite;
+}
