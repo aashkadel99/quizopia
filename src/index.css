@@ -32,6 +32,10 @@ body {
   box-shadow: 0px 9px 0px 0px #000;
 }
 
+.rank-table-shadow{
+  box-shadow: -10px 14px 0px 0px #000;
+}
+
 /* .illustrations{
   outline: 2px solid red;
 } */
