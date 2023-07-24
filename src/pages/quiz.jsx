@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import PageLayout from "../layouts/PageLayout";
-import Options from "../components/Options"
+import Option from "../components/Option"
 
 export default function quiz() {
   return (
@@ -29,10 +29,10 @@ export default function quiz() {
             </p>
           </div>
           <div className="options w-full grid grid-cols-2 gap-10">
-            <Options/>
-            <Options/>
-            <Options/>
-            <Options/>
+            <Option optionNumber="A" optionData="Michael Jackson"/>
+            <Option optionNumber="B" optionData="Michael Jackson"/>
+            <Option optionNumber="C" optionData="Michael Jackson"/>
+            <Option optionNumber="D" optionData="Michael Jackson"/>
           </div>
         </div>
         <div className="next-button w-full flex justify-end">

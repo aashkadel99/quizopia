@@ -43,34 +43,73 @@ function App() {
               <label htmlFor="category" className="text-[1.125rem]">
                 Category
               </label>
-              <input
-                type="text"
+              <select
+                name="category"
                 id="category"
                 className="border-2 border-black w-[25.5rem]  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
-              />
+              >
+                <option value="any">Any Category</option>
+                <option value="any">General Knowledge</option>
+                <option value="any">Entertainment: Film</option>
+                <option value="any">Entertainment: Music</option>
+                <option value="any">Entertainment: Musicals & Theatres</option>
+                <option value="any">Entertainment: Television</option>
+                <option value="any">Video Games</option>
+                <option value="any">Board Games</option>
+              </select>
             </div>
             <div className="difficulty-wrapper flex flex-col gap-[0.5rem] mb-[2.5rem]">
               <label htmlFor="difficulty" className="text-[1.125rem]">
                 Difficulty
               </label>
-              <input
-                type="text"
+              <select
+                name="difficulty"
                 id="difficulty"
                 className="border-2 border-black w-[25.5rem]  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
-              />
+              >
+                <option value="any">Any Difficulty</option>
+                <option value="any">Easy</option>
+                <option value="any">Medium</option>
+                <option value="any">Hard</option>
+              </select>
             </div>
-            <Link to = "/quiz">
+            <Link to="/quiz">
               <button className="w-full border-4 border-black py-[0.5rem] px-[1rem] text-[1.25rem] font-bold rounded-xl hover:bg-black hover:text-white">
                 Play Quiz
               </button>
             </Link>
           </form>
           <div className="illustrations relative w-[26rem] mr-[10rem]">
-            <img src={qMarkOne} width="25%" alt="question mark one" className="absolute left-[2.5rem] animate-one"/>
-            <img src={qMarkTwo} width="10%" alt="question mark one" className="absolute top-20 right-[2.5rem] animate-two"/>
-            <img src={qMarkThree} width="15%" alt="question mark one" className="absolute bottom-[7rem] left-20 animate-three"/>
-            <img src={qMarkFour} width="20%" alt="question mark one" className="absolute bottom-[12.5rem] right-[6.5rem] animate-four"/>
-            <img src={qMarkFive} width="10%" alt="question mark one" className="absolute bottom-[4rem] right-[6rem] animate-five"/>
+            <img
+              src={qMarkOne}
+              width="25%"
+              alt="question mark one"
+              className="absolute left-[2.5rem] animate-one"
+            />
+            <img
+              src={qMarkTwo}
+              width="10%"
+              alt="question mark two"
+              className="absolute top-20 right-[2.5rem] animate-two"
+            />
+            <img
+              src={qMarkThree}
+              width="15%"
+              alt="question mark three"
+              className="absolute bottom-[7rem] left-20 animate-three"
+            />
+            <img
+              src={qMarkFour}
+              width="20%"
+              alt="question mark four"
+              className="absolute bottom-[12.5rem] right-[6.5rem] animate-four"
+            />
+            <img
+              src={qMarkFive}
+              width="10%"
+              alt="question mark "
+              className="absolute bottom-[4rem] right-[6rem] animate-five"
+            />
           </div>
         </div>
       </PageLayout>
