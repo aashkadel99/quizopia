@@ -13,12 +13,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/quiz",
-    element: <Quiz/>
+    element: <Quiz />,
   },
   {
     path: "/leaderboard",
-    element: <Leaderboard/>
-  }
+    element: <Leaderboard />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
