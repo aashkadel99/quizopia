@@ -36,6 +36,7 @@ function App() {
               <input
                 type="text"
                 id="username"
+                autoComplete="off"
                 className="border-2 border-black w-[25.5rem] py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
               />
             </div>
