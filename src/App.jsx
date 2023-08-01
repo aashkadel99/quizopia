@@ -7,9 +7,46 @@ import qMarkThree from "./assets/qmark_3.svg";
 import qMarkFour from "./assets/qmark_4.svg";
 import qMarkFive from "./assets/qmark_5.svg";
 import PageLayout from "./layouts/PageLayout";
+import Categories from "./Data/Categories";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [category, setCategory] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+  const [error, setError] = useState(false);
+  const [questions, setQuestions] = useState("");
+  const [score, setScore] = useState(0);
+
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const selectedCategory = Categories.find(
+      (item) => item.category === category
+    );
+    const categoryValue = selectedCategory ? selectedCategory.value : "";
+
+    if (!username || !category || !difficulty) {
+      setError(true);
+    } else {
+      setError(false);
+      fetchQuestions(categoryValue, difficulty);
+      navigate("/quiz");
+    }
+  };
+
+  const fetchQuestions = async (category = "", difficulty = "") => {
+    const url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`;
+
+    const { data } = await axios.get(url);
+    setQuestions(data.results);
+  };
+
   return (
     <div>
       <PageLayout>
@@ -27,7 +64,7 @@ function App() {
         <div className="home-content-wrapper flex justify-between">
           <form
             action=""
-            className="py-[4rem] px-[3rem] border-2 bg-white border-black w-[32rem] rounded-2xl form-shadow"
+            className="py-[3.5rem] px-[3rem] border-2 bg-white border-black w-[32rem] rounded-2xl form-shadow"
           >
             <div className="username-wrapper flex flex-col gap-[0.5rem] mb-[1rem]">
               <label htmlFor="username" className="text-[1.125rem]">
@@ -38,6 +75,7 @@ function App() {
                 id="username"
                 autoComplete="off"
                 className="border-2 border-black w-[25.5rem] py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="category-wrapper flex flex-col gap-[0.5rem] mb-[1rem]">
@@ -47,19 +85,27 @@ function App() {
               <select
                 name="category"
                 id="category"
-                className="border-2 border-black w-[25.5rem]  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                className="border-2 border-black w-[25.5rem] py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
               >
                 <option value="any">Any Category</option>
-                <option value="any">General Knowledge</option>
-                <option value="any">Entertainment: Film</option>
-                <option value="any">Entertainment: Music</option>
-                <option value="any">Entertainment: Musicals & Theatres</option>
-                <option value="any">Entertainment: Television</option>
-                <option value="any">Video Games</option>
-                <option value="any">Board Games</option>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Entertainment: Film">Entertainment: Film</option>
+                <option value="Entertainment: Music">
+                  Entertainment: Music
+                </option>
+                <option value="Entertainment: Musicals & Theatres">
+                  Entertainment: Musicals & Theatres
+                </option>
+                <option value="Entertainment: Television">
+                  Entertainment: Television
+                </option>
+                <option value="Video Games">Video Games</option>
+                <option value="Board Games">Board Games</option>
               </select>
             </div>
-            <div className="difficulty-wrapper flex flex-col gap-[0.5rem] mb-[2.5rem]">
+            <div className="difficulty-wrapper flex flex-col gap-[0.5rem] mb-[.5rem]">
               <label htmlFor="difficulty" className="text-[1.125rem]">
                 Difficulty
               </label>
@@ -67,18 +113,26 @@ function App() {
                 name="difficulty"
                 id="difficulty"
                 className="border-2 border-black w-[25.5rem]  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                onChange={(e) => setDifficulty(e.target.value)}
+                value={difficulty}
               >
                 <option value="any">Any Difficulty</option>
-                <option value="any">Easy</option>
-                <option value="any">Medium</option>
-                <option value="any">Hard</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
               </select>
             </div>
-            <Link to="/quiz">
-              <button className="w-full border-4 border-black py-[0.5rem] px-[1rem] text-[1.25rem] font-bold rounded-xl hover:bg-black hover:text-white">
-                Play Quiz
-              </button>
-            </Link>
+            {error && (
+              <p className="text-lg text-center text-red mt-[.25rem]">
+                Please fill in all the fields accurately.
+              </p>
+            )}
+            <button
+              className="w-full border-4 border-black py-[0.5rem] px-[1rem] mt-[1.2rem] text-[1.25rem] font-bold rounded-xl hover:bg-black hover:text-white"
+              onClick={handleFormSubmit}
+            >
+              Play Quiz
+            </button>
           </form>
           <div className="illustrations relative w-[26rem] mr-[10rem]">
             <img
