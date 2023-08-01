@@ -1,28 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Quiz from "./pages/quiz";
-import Leaderboard from "./pages/leaderboard";
-import "./index.css";
+// import React from "react";
+// import { useState } from "react";
+// import axios from "axios";
+// import ReactDOM from "react-dom/client";
+// import App from "./App.jsx";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import Quiz from "./pages/quiz";
+// import Leaderboard from "./pages/leaderboard";
+// import Home from "./pages/home";
+// import "./index.css";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/quiz",
-    element: <Quiz />,
-  },
-  {
-    path: "/leaderboard",
-    element: <Leaderboard />,
-  },
-]);
+// import React from "react";
+// import ReactDOM from "react-dom";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+import { createRoot } from "react-dom/client";
+
+const domNode = document.getElementById("root");
+
+const root = createRoot(domNode);
+
+root.render(<App />);
