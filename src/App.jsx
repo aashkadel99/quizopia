@@ -16,7 +16,7 @@ function App() {
     const url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`;
 
     const { data } = await axios.get(url);
-    console.log(data);
+    // console.log(data);
     setQuestions(data.results);
   };
 
