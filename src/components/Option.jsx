@@ -9,7 +9,7 @@ const Option = ({ optionData, disabled, onClick, className }) => {
 
   return (
     <button
-      className={`w-[37.5rem] border-4 border-black py-[3rem] px-[2rem] rounded-3xl options-shadow hover:bg-blue`}
+      className={`w-full border-4 border-black py-[3rem] px-[2rem] rounded-3xl options-shadow hover:bg-blue ${className}`}
       onClick={handleOptionClick}
       disabled={disabled}
     >

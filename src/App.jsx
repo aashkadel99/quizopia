@@ -56,41 +56,6 @@ function App() {
       {/* </div> */}
     </Router>
   );
-
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: (
-  //       <Home
-  //         username={username}
-  //         setUsername={setUsername}
-  //         fetchQuestions={fetchQuestions}
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     path: "/quiz",
-  //     element: (
-  //       <Quiz
-  //         username={username}
-  //         questions={questions}
-  //         score={score}
-  //         setScore={setScore}
-  //         setQuestions={setQuestions}
-  //       />
-  //     ),
-  //   },
-  //   {
-  //     path: "/leaderboard",
-  //     element: <Leaderboard />,
-  //   },
-  // ]);
-
-  // ReactDOM.createRoot(document.getElementById("root")).render(
-  //   <React.StrictMode>
-  //     <RouterProvider router={router} />
-  //   </React.StrictMode>
-  // );
 }
 
 export default App;

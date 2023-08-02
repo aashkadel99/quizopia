@@ -60,15 +60,16 @@ export default function Quiz({
     if (selected === null) {
       setError(true);
     } else {
-      navigate("/score")
+      navigate("/score");
     }
-  }
+  };
 
   const handleQuit = () => {
-    setScore(0)
-    navigate("/")
-  }
+    setScore(0);
+    navigate("/");
+  };
 
+  console.log("questioj", questions);
   return (
     <div>
       <PageLayout>
@@ -76,7 +77,10 @@ export default function Quiz({
           <p className="bg-white border-2 border-black py-[1rem] px-[2.5rem] rounded-full text-[1rem] font-semibold welcome-shadow">
             Welcome, {username}
           </p>
-          <button className="bg-red rounded-full py-[0.5rem] px-[3rem] text-[1rem] text-white font-bold hover:bg-darkRed" onClick={handleQuit}>
+          <button
+            className="bg-red rounded-full py-[0.5rem] px-[3rem] text-[1rem] text-white font-bold hover:bg-darkRed"
+            onClick={handleQuit}
+          >
             QUIT
           </button>
         </nav>
@@ -102,28 +106,40 @@ export default function Quiz({
                 <p className="question-number bg-black text-white text-[1.5rem] font-bold px-[1.1rem] py-[0.5rem] rounded-full">
                   {currentQuestion + 1}/10
                 </p>
-                <p className="question text-[1.5rem] font-bold">
-                  {questions[currentQuestion]?.question}
-                </p>
+                <div
+                  className="question text-[1.5rem] font-bold"
+                  dangerouslySetInnerHTML={{
+                    __html: questions[currentQuestion]?.question,
+                  }}
+                />
               </div>
               <div className="options w-full grid grid-cols-2 gap-10">
                 {options.length > 0 ? (
-                  options.map((option) => (
-                    <Option
-                      key={option}
-                      optionData={option}
-                      disabled={selected !== null}
-                      onClick={handleOptionSelect}
-                      className={
-                        selected === option
-                          ? option ===
-                            questions[currentQuestion]?.correct_answer
-                            ? "selected correct"
-                            : "selected incorrect"
-                          : ""
-                      }
-                    />
-                  ))
+                  options.map((option) => {
+                    console.log("currentQuestion", currentQuestion);
+
+                    const isCorrect =
+                      questions[currentQuestion]?.correct_answer === option;
+
+                    const green =
+                      (selected && isCorrect) ||
+                      (selected === option && isCorrect);
+                    const red = selected === option && !isCorrect;
+                    return (
+                      <>
+                        <Option
+                          key={option}
+                          optionData={option}
+                          disabled={selected !== null}
+                          onClick={handleOptionSelect}
+                          isCorrect={isCorrect}
+                          className={
+                            green ? "bg-green hover:bg-green" : red ? "bg-red hover:bg-red" : "bg-white"
+                          }
+                        />
+                      </>
+                    );
+                  })
                 ) : (
                   <p>Loading options...</p>
                 )}
@@ -154,3 +170,23 @@ export default function Quiz({
     </div>
   );
 }
+
+// const [score,setScore]  = useState(0)
+// const [currentQuestion,setCurrentQuestion]= useState(0)
+
+// <QuizUI question={question[currentQuestion]?.question} options={} correctAnswer={} onSelect={(isCorrect)=>{
+//   setScore(_s=>s+1)
+//   setCurrentQuestion(_c=>c+1)
+
+// }}/>
+
+
+
+// QuizUI:
+
+// const [selected,setSelected] = useState(null)
+
+// const isCorrectSelected = correctAnswer ===selected
+
+// selected==='this'?isCorrectSelected?'bg-green':'bg-red':'bg-whte'
+// <option >1</option>
