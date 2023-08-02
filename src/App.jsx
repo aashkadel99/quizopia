@@ -6,6 +6,7 @@ import Quiz from "./pages/quiz";
 import Leaderboard from "./pages/leaderboard";
 import Home from "./pages/home";
 import "./index.css";
+import Score from "./pages/score";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -46,7 +47,11 @@ function App() {
             />
           }
         />
-        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/leaderboard" element={<Leaderboard username={username} score = {score}/>} />
+        <Route
+          path="/score"
+          element={<Score username={username} score={score} />}
+        />
       </Routes>
       {/* </div> */}
     </Router>

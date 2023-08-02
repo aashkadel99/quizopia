@@ -44,31 +44,31 @@ const Leaderboard = () => {
             <tr className="text-[1.5rem] text-left font-semibold">
               <th className="">Rank</th>
               <th>Username</th>
-              <th>Category</th>
+              {/* <th>Category</th> */}
               <th>Score</th>
             </tr>
             <tr className="text-[1.2rem] font-medium">
               <td className="">4</td>
               <td>John Doe</td>
-              <td>General Knowledge</td>
+              {/* <td>General Knowledge</td> */}
               <td>30</td>
             </tr>
             <tr className="text-[1.2rem] font-medium">
               <td className="">5</td>
               <td>Emily Johnson</td>
-              <td>Science</td>
+              {/* <td>Science</td> */}
               <td>10</td>
             </tr>
             <tr className="text-[1.2rem] font-medium">
               <td className="">6</td>
               <td>Michael Williams</td>
-              <td>History</td>
+              {/* <td>History</td> */}
               <td>70</td>
             </tr>
             <tr className="text-[1.2rem] font-medium">
               <td className="">7</td>
               <td>Olivia Brown</td>
-              <td>Music</td>
+              {/* <td>Music</td> */}
               <td>100</td>
             </tr>
           </table>
