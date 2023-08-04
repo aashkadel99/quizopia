@@ -12,7 +12,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 
-function Home({ username, setUsername, fetchQuestions }) {
+function Home({ username, setUsername, fetchQuestions, setScore }) {
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [error, setError] = useState(false);
@@ -32,6 +32,7 @@ function Home({ username, setUsername, fetchQuestions }) {
     } else {
       setError(false);
       fetchQuestions(categoryValue, difficulty);
+      setScore(0);
       navigate("/quiz");
     }
   };

@@ -13,7 +13,10 @@ const Option = ({ optionData, disabled, onClick, className }) => {
       onClick={handleOptionClick}
       disabled={disabled}
     >
-      <p className="text-[1.5rem] font-semibold">{optionData}</p>
+      <div
+        className="text-[1.5rem] font-semibold"
+        dangerouslySetInnerHTML={{ __html: optionData }}
+      />
     </button>
   );
 };

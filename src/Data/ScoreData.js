@@ -1,26 +1,32 @@
 const ScoreData = [
   {
-    username: "Aashish",
-    score: 40,
+    "username": "Bob",
+    "score": 90,
   },
   {
-    username: "John",
-    score: 70,
+    "username": "Aashish",
+    "score": 90,
   },
   {
-    username: "Alice",
-    score: 50,
+    "username": "John",
+    "score": 70,
   },
   {
-    username: "Bob",
-    score: 90,
+    "username": "Alice",
+    "score": 50,
   },
   {
-    username: "Eve",
-    score: 30,
+    "username": "Eve",
+    "score": 30,
   },
   {
-    username: "Michael",
-    score: 80,
+    "username": "Michael",
+    "score": 70,
+  },
+  {
+    "username": "Michael",
+    "score": 70,
   }
 ];
+
+export default ScoreData;

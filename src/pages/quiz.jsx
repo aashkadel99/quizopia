@@ -60,6 +60,11 @@ export default function Quiz({
     if (selected === null) {
       setError(true);
     } else {
+      const data = localStorage.getItem("leaderboard");
+      const _localData = JSON.parse(data);
+      _localData.push({ username, score });
+      localStorage.setItem("leaderboard", JSON.stringify(_localData));
+
       navigate("/score");
     }
   };
@@ -134,7 +139,11 @@ export default function Quiz({
                           onClick={handleOptionSelect}
                           isCorrect={isCorrect}
                           className={
-                            green ? "bg-green hover:bg-green" : red ? "bg-red hover:bg-red" : "bg-white"
+                            green
+                              ? "bg-green hover:bg-green"
+                              : red
+                              ? "bg-red hover:bg-red"
+                              : "bg-white"
                           }
                         />
                       </>
@@ -179,8 +188,6 @@ export default function Quiz({
 //   setCurrentQuestion(_c=>c+1)
 
 // }}/>
-
-
 
 // QuizUI:
 
