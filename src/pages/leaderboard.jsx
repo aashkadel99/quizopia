@@ -25,19 +25,19 @@ const Leaderboard = () => {
         <div className="top-3 w-full flex flex-col items-center gap-10 mb-8">
           <div className="first w-[25rem] py-[1.55rem] px-[3rem] flex items-center border-2 border-black rounded-xl leaderboard-shadow gap-5">
             <img src={trophy} alt="trophy" width="30%" />
-            <p className="text-[1.8rem] font-bold">{sortedData[0].username}</p>
+            <p className="text-[1.8rem] font-bold">{sortedData[0].username} - {sortedData[0].score}</p>
           </div>
           <div className="second-and-third flex gap-8">
             <div className="second  w-[25rem] py-[1.55rem] px-[3rem] flex items-center border-2 border-black rounded-xl leaderboard-shadow gap-5">
               <img src={second} alt="trophy" width="20%" />
               <p className="text-[1.8rem] font-bold">
-                {sortedData[1].username}
+                {sortedData[1].username} - {sortedData[0].score}
               </p>
             </div>
             <div className="third  w-[25rem] py-[1.55rem] px-[3rem] flex items-center border-2 border-black rounded-xl leaderboard-shadow gap-5">
               <img src={third} alt="trophy" width="20%" />
               <p className="text-[1.8rem] font-bold">
-                {sortedData[2].username}
+                {sortedData[2].username} - {sortedData[0].score}
               </p>
             </div>
           </div>

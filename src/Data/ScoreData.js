@@ -22,10 +22,6 @@ const ScoreData = [
   {
     "username": "Michael",
     "score": 70,
-  },
-  {
-    "username": "Michael",
-    "score": 70,
   }
 ];
 
