@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PageLayout from "../layouts/PageLayout";
 import Option from "../components/Option";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,7 @@ export default function Quiz({
   questions,
   score,
   setScore,
-  setQuestions,
+  // setQuestions,
 }) {
   const [options, setOptions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);

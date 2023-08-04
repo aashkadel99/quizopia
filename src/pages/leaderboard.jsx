@@ -31,13 +31,13 @@ const Leaderboard = () => {
             <div className="second  w-[25rem] py-[1.55rem] px-[3rem] flex items-center border-2 border-black rounded-xl leaderboard-shadow gap-5">
               <img src={second} alt="trophy" width="20%" />
               <p className="text-[1.8rem] font-bold">
-                {sortedData[1].username} - {sortedData[0].score}
+                {sortedData[1].username} - {sortedData[1].score}
               </p>
             </div>
             <div className="third  w-[25rem] py-[1.55rem] px-[3rem] flex items-center border-2 border-black rounded-xl leaderboard-shadow gap-5">
               <img src={third} alt="trophy" width="20%" />
               <p className="text-[1.8rem] font-bold">
-                {sortedData[2].username} - {sortedData[0].score}
+                {sortedData[2].username} - {sortedData[2].score}
               </p>
             </div>
           </div>
