@@ -93,6 +93,9 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
                 </option>
                 <option value="Video Games">Video Games</option>
                 <option value="Board Games">Board Games</option>
+                <option value="Computer">Computer</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Mythology">Mythology</option>
               </select>
             </div>
             <div className="difficulty-wrapper flex flex-col gap-[0.5rem] mb-[.5rem]">
