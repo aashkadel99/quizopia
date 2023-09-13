@@ -40,9 +40,9 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
   return (
     <div>
       <PageLayout>
-        <img src={quizopiaTitle} alt="Title Image" className="mt-8" />
-        <div className="subheading-and-button flex items-center w-full justify-between">
-          <p className="text-[1.8rem] mt-2 mb-6">
+        <img src={quizopiaTitle} alt="Title Image" className="mt-8 " />
+        <div className="subheading-and-button flex  gap-4  md:justify-between  md:gap-1 flex-col lg:flex-row w-full  my-4">
+          <p className="text-[1.6rem] leading-8 ">
             Unlock Your Knowledge: The Ultimate Quiz Challenge!
           </p>
           <Link to="/leaderboard">
@@ -54,9 +54,9 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
         <div className="home-content-wrapper flex justify-between">
           <form
             action=""
-            className="py-[3.5rem] px-[3rem] border-2 bg-white border-black w-[32rem] rounded-2xl form-shadow"
+            className="py-[3.5rem] px-[3rem] border-2 bg-white border-black w-full lg:w-[32rem] rounded-2xl form-shadow"
           >
-            <div className="username-wrapper flex flex-col gap-[0.5rem] mb-[1rem]">
+            <div className="username-wrapper flex flex-col w-full gap-[0.5rem] mb-[1rem]">
               <label htmlFor="username" className="text-[1.125rem]">
                 Username
               </label>
@@ -64,18 +64,18 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
                 type="text"
                 id="username"
                 autoComplete="off"
-                className="border-2 border-black w-[25.5rem] py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                className="border-2 border-black w-full  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className="category-wrapper flex flex-col gap-[0.5rem] mb-[1rem]">
+            <div className="category-wrapper flex flex-col  w-full gap-[0.5rem] mb-[1rem]">
               <label htmlFor="category" className="text-[1.125rem]">
                 Category
               </label>
               <select
                 name="category"
                 id="category"
-                className="border-2 border-black w-[25.5rem] py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                className="border-2 border-black w-full py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}
               >
@@ -98,14 +98,14 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
                 <option value="Mythology">Mythology</option>
               </select>
             </div>
-            <div className="difficulty-wrapper flex flex-col gap-[0.5rem] mb-[.5rem]">
+            <div className="difficulty-wrapper flex flex-col  w-full gap-[0.5rem] mb-[.5rem]">
               <label htmlFor="difficulty" className="text-[1.125rem]">
                 Difficulty
               </label>
               <select
                 name="difficulty"
                 id="difficulty"
-                className="border-2 border-black w-[25.5rem]  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
+                className="border-2 border-black w-full  py-[0.5rem] px-[1rem] rounded-lg text-[1.2rem]"
                 onChange={(e) => setDifficulty(e.target.value)}
                 value={difficulty}
               >
@@ -127,7 +127,7 @@ function Home({ username, setUsername, fetchQuestions, setScore }) {
               Play Quiz
             </button>
           </form>
-          <div className="illustrations relative w-[26rem] mr-[10rem]">
+          <div className="illustrations hidden relative w-[26rem] mr-[10rem] lg:block">
             <img
               src={qMarkOne}
               width="25%"

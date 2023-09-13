@@ -79,11 +79,11 @@ export default function Quiz({
     <div>
       <PageLayout>
         <nav className="flex justify-between my-[2.5rem]">
-          <p className="bg-white border-2 border-black py-[1rem] px-[2.5rem] rounded-full text-[1rem] font-semibold welcome-shadow">
+          <p className="bg-white border-2 border-black py-[1rem]  px-[1rem] sm:px-[2.5rem] rounded-full text-[1rem] font-semibold welcome-shadow">
             Welcome, {username}
           </p>
           <button
-            className="bg-red rounded-full py-[0.5rem] px-[3rem] text-[1rem] text-white font-bold hover:bg-darkRed"
+            className="bg-red rounded-full py-[1rem] px-[1rem] sm:px-[3rem]  text-[0.8rem] sm:text-[1rem] text-white font-bold hover:bg-darkRed"
             onClick={handleQuit}
           >
             QUIT
@@ -101,24 +101,24 @@ export default function Quiz({
         </div>
         {questions ? (
           <div className="quiz-main-content">
-            <div className="quiz-content w-full border-4 border-black rounded-xl py-[3.25rem] px-[3.25rem] mb-[1.5rem] quiz-shadow">
+            <div className="quiz-content w-full border-4 border-black rounded-xl py-[2rem] px-[1rem] md:py-[3.25rem] md:px-[3.25rem] mb-[1.5rem] quiz-shadow">
               {error && (
                 <p className="text-2xl text-red text-center font-bold mb-2">
                   ● Select at least one option ●
                 </p>
               )}
-              <div className="question-wrapper flex items-center gap-[1.5rem] mb-8">
-                <p className="question-number bg-black text-white text-[1.5rem] font-bold px-[1.1rem] py-[0.5rem] rounded-full">
+              <div className="question-wrapper flex sm:items-center flex-col sm:flex-row gap-[1.5rem] mb-8">
+                <p className="question-number bg-black w-fit text-white text-[1.5rem] font-bold px-[1.1rem] py-[0.5rem] rounded-full">
                   {currentQuestion + 1}/10
                 </p>
                 <div
-                  className="question text-[1.5rem] font-bold"
+                  className="question text-[1.2rem] md:text-[1.5rem] font-bold"
                   dangerouslySetInnerHTML={{
                     __html: questions[currentQuestion]?.question,
                   }}
                 />
               </div>
-              <div className="options w-full grid grid-cols-2 gap-10">
+              <div className="options w-full grid grid-cols-1 sm:grid-cols-2  gap-6 sm:gap-10">
                 {options.length > 0 ? (
                   options.map((option) => {
                     console.log("currentQuestion", currentQuestion);
